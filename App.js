@@ -1,13 +1,54 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
+
+import { FontAwesome } from '@expo/vector-icons';
+import { COLORS } from './Constants/Colors';
+import Login from './Screens/LoginScreen/Login';
+import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
+import * as SecureStore from "expo-secure-store";
+import { SafeAreaView } from 'react-native-safe-area-context';
+import HomePage from './Screens/HomeScreen/HomePage';
+import Container from './Navigations/Container';
+import ProfilePage from './Screens/ProfileScreen/ProfilePage';
+const tokenCache = {
+  async getToken(key) {
+    try {
+      return SecureStore.getItemAsync(key);
+    } catch (err) {
+      return null;
+    }
+  },
+  async saveToken(key, value) {
+    try {
+      return SecureStore.setItemAsync(key, value);
+    } catch (err) {
+      return;
+    }
+  },
+};
+
 
 export default function App() {
+  const screenWidth = Dimensions.get('window').width;
+  const screenHeight = Dimensions.get('window').height;
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ClerkProvider publishableKey='pk_test_ZnVua3ktd2FydGhvZy04OS5jbGVyay5hY2NvdW50cy5kZXYk' tokenCache={tokenCache}>
+      <View style={styles.container}>
+        <SignedIn>
+          <Container />
+
+        </SignedIn>
+
+        <SignedOut>
+          <Login />
+        </SignedOut>
+      </View>
+    </ClerkProvider>
+
+
+
   );
 }
 
@@ -17,5 +58,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '414',
+    height: '896',
   },
 });

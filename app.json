@@ -2,7 +2,15 @@
   "expo": {
     "name": "MentalApp",
     "slug": "MentalApp",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "plugins": [
+      "expo-secure-store"
+    ]
+  },
+  "ios": {
+    "supportsTablet": true
   },
   "name": "MentalApp"
 }
