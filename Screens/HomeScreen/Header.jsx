@@ -4,23 +4,23 @@ import { StatusBar } from 'expo-status-bar'
 import { useUser } from '@clerk/clerk-expo'
 
 const Header = () => {
-    const {user, isLoading } =useUser();
-  return (
-    <View>
+    const { user, isLoading } = useUser();
+    return (
         <View>
-            <Image source={{uri:user?.imageUrl}}
-            style={styles.userImage}
-            />
-        </View>      
-    </View>
-  )
+            <View>
+                <Image source={{ uri: user?.imageUrl }}
+                    style={styles.userImage}
+                />
+            </View>
+        </View>
+    )
 }
 
 export default Header
 
 const styles = StyleSheet.create({
-    userImage:{
-        width:45,
-        height:45,
+    userImage: {
+        width: 45,
+        height: 45,
     }
 })
