@@ -13,7 +13,7 @@ import ProfilePage from './Screens/ProfileScreen/ProfilePage';
 import { NavigationContainer } from '@react-navigation/native';
 import TabNavigation from './Navigations/TabNavigation';
 import BookingPage from './Screens/BookingScreen/BookingPage';
-
+import { useFonts } from 'expo-font';
 
 
 const tokenCache = {
@@ -36,16 +36,27 @@ const tokenCache = {
 
 
 export default function App() {
-  const screenWidth = Dimensions.get('window').width;
-  const screenHeight = Dimensions.get('window').height;
+  const [fontsLoaded] = useFonts({
+    'outfit': require('./Assets/Fonts/static/Outfit-Regular.ttf'),
+    'outfit-medium': require('./Assets/Fonts/static/Outfit-Medium.ttf'),
+    'outfit-bold': require('./Assets/Fonts/static/Outfit-Bold.ttf'),
+    'outfit-semiBold': require('./Assets/Fonts/static/Outfit-SemiBold.ttf'),
+
+
+
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
-    
+
     <ClerkProvider publishableKey='pk_test_ZnVua3ktd2FydGhvZy04OS5jbGVyay5hY2NvdW50cy5kZXYk' tokenCache={tokenCache} >
       <View style={styles.container}>
         <SignedIn>
           <NavigationContainer>
-          <TabNavigation/>
+            <TabNavigation />
           </NavigationContainer>
         </SignedIn>
 

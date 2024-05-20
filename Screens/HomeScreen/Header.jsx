@@ -22,7 +22,7 @@ const Header = () => {
 
                     <View>
                         <Text style={{ color: COLORS.white }}>Welcome</Text>
-                        <Text style={{ color: COLORS.white, fontSize: 20 }}>{user?.fullName}</Text>
+                        <Text style={{ color: COLORS.white, fontSize: 20, fontFamily: 'outfit' }}>{user?.fullName}</Text>
                     </View>
                 </View>
                 <Ionicons name="notifications" size={27} color="white" />
