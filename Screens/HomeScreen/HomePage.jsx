@@ -8,7 +8,11 @@ const HomePage = () => {
   return (
     <SafeAreaView >
       <Header />
-      <Slider />
+      <View style={{ padding: 20 }}>
+        <Slider />
+
+      </View>
+
     </SafeAreaView>
   )
 }
