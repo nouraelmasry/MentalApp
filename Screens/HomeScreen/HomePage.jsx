@@ -3,6 +3,7 @@ import React from 'react'
 import Header from './Header'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Slider from './Slider'
+import Categories from './Categories'
 
 const HomePage = () => {
   return (
@@ -10,6 +11,7 @@ const HomePage = () => {
       <Header />
       <View style={{ padding: 20 }}>
         <Slider />
+        <Categories />
 
       </View>
 
