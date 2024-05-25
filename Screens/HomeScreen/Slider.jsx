@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, Text, View } from 'react-native';
 import { COLORS } from "../../Constants/Colors";
 
-const BookingPage = () => {
+
+
+const Slider = () => {
+
     return (
-        <View style={styles.container}>
-            <Text>Booking page</Text>
+        <View>
+            <Text>Slider</Text>
 
 
         </View>
     )
 
 }
-export default BookingPage;
+export default Slider;
 
 const styles = StyleSheet.create({
     container: {
@@ -23,4 +26,3 @@ const styles = StyleSheet.create({
     },
 
 });
-
