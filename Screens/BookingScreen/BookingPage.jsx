@@ -40,7 +40,7 @@ const BookingPage = () => {
           email: "johndoe@example.com",
           specialization: "Psychiatrist",
           image: require("../../Assets/Images/ahmedMohamed.jpg"),
-          about: "Dr. John Doe is a highly experienced cardiologist with over 20 years of experience in treating heart-related conditions.",
+          about: "A dedicated psychiatrist with a passion for helping individuals, especially with children and those dealing with PTSD. With years of experience in the mental health field, I strive to create a safe and supportive space for my patients. My approach is compassionate and patient-centered, ensuring that every session is tailored to your unique needs and experiences. I am here to support you on your journey to healing and growth. For those dealing with PTSD, I offer specialized techniques and therapies to help manage and overcome trauma. Working with children, I use age-appropriate methods to create a comfortable environment where they can express themselves freely and begin their path to recovery..",
         },
         {
           id: "02",

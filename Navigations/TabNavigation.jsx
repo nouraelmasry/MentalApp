@@ -7,6 +7,7 @@ import ProfilePage from '../Screens/ProfileScreen/ProfilePage';
 import { FontAwesome } from '@expo/vector-icons';
 import ChatScreen from '../Screens/ChatBot/ChatScreen';
 import { Entypo } from '@expo/vector-icons';
+import BookingNavigation from './BookingNavigation';
 
 const Tab = createBottomTabNavigator();
 const TabNavigation = () => {
@@ -25,7 +26,7 @@ const TabNavigation = () => {
                     )
                 }}
             />
-            <Tab.Screen name='booking' component={BookingPage}
+            <Tab.Screen name='booking' component={BookingNavigation}
                 options={{
                     tabBarLabel: ({ color }) => (
                         <Text style={{ color: color, fontSize: 12, marginTop: -7, marginBottom: 5 }}>Booking</Text>
