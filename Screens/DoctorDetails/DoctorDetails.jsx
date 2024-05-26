@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { Ionicons } from '@expo/vector-icons';
 import { ScrollView } from 'react-native';
+import { Modal } from 'react-native';
+import BookingModal from './BookingModal';
 
 const DoctorDetails = () => {
   const param= useRoute().params;
@@ -11,6 +13,7 @@ const DoctorDetails = () => {
   }, [param])
   const navigation = useNavigation();
   const [isReadMore, setIsReadMore] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   return (
     <View>
     <ScrollView style={{marginTop:30, height:'88%'}}>
@@ -38,10 +41,13 @@ const DoctorDetails = () => {
       <TouchableOpacity style={styles.messageBtn}>
         <Text style={{textAlign:'center', fontFamily:'outfit-medium', color:"#9bb169", fontSize:18}}>Message</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.bookingBtn}>
+      <TouchableOpacity style={styles.bookingBtn} onPress={()=>setShowModal(true)}>
         <Text style={{textAlign:'center', fontFamily:'outfit-medium', color:"white", fontSize:18}}>Book Now</Text>
       </TouchableOpacity>
     </View>
+    <Modal animationType='slide' visible={showModal}>
+      <BookingModal hideModal={()=>setShowModal(false)}/>
+    </Modal>
     </View>
   )
 }
