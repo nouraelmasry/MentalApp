@@ -1,33 +1,6 @@
-// import React from "react";
-// import { StyleSheet, Text, View } from 'react-native';
-// import { COLORS } from "../../Constants/Colors";
-
-// const BookingPage = () => {
-//     return (
-//         <View style={styles.container}>
-//             <Text>Booking page</Text>
-
-
-//         </View>
-//     )
-
-// }
-// export default BookingPage;
-
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         alignItems: 'center',
-//         justifyContent: 'center',
-
-//     },
-
-// });
-
 import React from 'react';
 import { View, Text, Image, FlatList, StyleSheet } from 'react-native';
 import DoctorListItem from './DoctorListItem';
-// import DoctorsList from '../path/to/DoctorsList'; // Adjust the path as necessary
 
 
 const BookingPage = () => {

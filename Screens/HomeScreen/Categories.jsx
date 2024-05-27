@@ -1,8 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
-
+import { useNavigation } from "@react-navigation/native";
+import { TouchableOpacity } from "react-native";
 
 const Categories = () => {
+    const navigation = useNavigation();
     const Data = [
         {
             id: "01",
@@ -27,12 +29,19 @@ const Categories = () => {
         },
 
     ];
+
+    const handlePress = (name) => {
+        if (name === "Mental Quizzes") {
+            navigation.push('Quizzes');
+        }
+    };
+
     const renderItem = ({ item, index }) => {
         return (
-            <View style={{ margin: 10, padding: 10, alignContent: "center" }}>
+            <TouchableOpacity style={{ margin: 10, padding: 10, alignContent: "center" }} onPress={() => handlePress(item.name)}>
                 <Image source={item.image} style={styles.sliderStyle} />
                 <Text style={{ fontFamily: "outfit-medium", marginTop: 10 }}>{item.name}</Text>
-            </View>
+            </TouchableOpacity>
         );
 
     };
