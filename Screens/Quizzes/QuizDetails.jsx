@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 const QuizDetails = () => {
     const route = useRoute();
     const { quiz } = route.params;
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
+    const navigation = useNavigation();
 
     const handleOptionSelect = (optionScore) => {
         setScore(score + optionScore);
@@ -15,7 +16,20 @@ const QuizDetails = () => {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
             // Quiz finished
-            Alert.alert('Quiz Finished', `Your total score is: ${score}`);
+           Alert.alert(
+                'Quiz Finished',
+                `Your total score is: ${score}`,
+                [
+                    {
+                        text: 'OK',
+                        onPress: () => {
+                            navigation.goBack();
+                        },
+                    },
+                ],
+                { cancelable: false }
+            );
+        
         }
     };
 
@@ -28,7 +42,7 @@ const QuizDetails = () => {
                 data={currentQuestion.options}
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({ item }) => (
-                    <TouchableOpacity style={styles.option} onPress={() => handleOptionSelect(item.score)}>
+                    <TouchableOpacity style={[styles.option, { backgroundColor: quiz.color }]} onPress={() => handleOptionSelect(item.score)}>
                         <Text style={styles.optionText}>{item.text}</Text>
                     </TouchableOpacity>
                 )}
@@ -46,12 +60,12 @@ const styles = StyleSheet.create({
     question: {
         fontSize: 22,
         fontWeight: 'bold',
-        marginBottom: 20,
+        marginBottom: 40,
     },
     option: {
         padding: 15,
-        backgroundColor: '#e0e0e0',
-        borderRadius: 5,
+        // backgroundColor: '#e0e0e0',
+        borderRadius: 15,
         marginBottom: 10,
     },
     optionText: {

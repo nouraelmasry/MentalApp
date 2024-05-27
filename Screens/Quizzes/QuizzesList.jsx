@@ -9,13 +9,10 @@ import { COLORS } from '../../Constants/Colors';
 const QuizzesList = () => {
     const navigation = useNavigation();
 
-    const handleQuizSelect = (quiz) => {
-        navigation.push('QuizDetails', { quiz });
-    };
-
+    
     return (
         <View style={{padding:20, paddingTop:100, flex:1 }}>
-            <TouchableOpacity style={styles.backBtnContainer} >
+            <TouchableOpacity style={styles.backBtnContainer}  >
                 <Ionicons name='arrow-back-outline' size={30} color='black'/>
                 <Text style={{fontSize:25, fontFamily:'outfit-medium', color:"black"}}>Available Quizzes</Text>
             </TouchableOpacity>

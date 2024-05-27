@@ -1,6 +1,9 @@
+import { COLORS } from "../../Constants/Colors";
+
 const QuizzesData = [
     {
         id: 1,
+        color: COLORS.Primary,
         image:require("../../Assets/Images/Personality-disorder-bro.png"),
         title: "Personality Quiz",
         questions: [
@@ -27,6 +30,7 @@ const QuizzesData = [
     },
     {
         id: 2,
+        color:COLORS.Purple,
         image:require("../../Assets/Images/Depression-rafiki.png"),
         title: "Depression Quiz",
         questions: [
@@ -53,6 +57,7 @@ const QuizzesData = [
     },
     {
         id: 3,
+        color: COLORS.Yellow,
         image:require("../../Assets/Images/Anxiety-bro.png"),
         title: "Anxiety Quiz",
         questions: [
