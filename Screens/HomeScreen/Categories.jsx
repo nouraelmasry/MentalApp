@@ -34,6 +34,9 @@ const Categories = () => {
         if (name === "Mental Quizzes") {
             navigation.push('Quizzes');
         }
+        else if (name === "Scan Any Text"){
+            navigation.push('OCR');   
+        }
     };
 
     const renderItem = ({ item, index }) => {

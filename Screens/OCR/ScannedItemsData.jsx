@@ -1,0 +1,86 @@
+const ScannedItemsData = [
+    {
+      id: 1,
+      image:require("../../Assets/Images/reports.png"),
+      title: "Depression Assessment Report",
+      keywords: ["mood", "symptoms", "evaluation"],
+      type: "report",
+      content: "Case: The patient has a history of persistent depressive disorder. Prescriptions: Sertraline 50mg daily. Past Diagnoses: Major depressive disorder, recurrent episodes. Follow-up recommended in 6 weeks.",
+    },
+    {
+      id: 2,
+      image:require("../../Assets/Images/tasks.png"),
+      title: "Cognitive Behavioral Therapy Tasks",
+      keywords: ["CBT", "thought patterns", "exercises"],
+      type: "task",
+      content: "Writing Task: I identified negative thoughts about my self-worth and replaced them with positive affirmations. I learned that challenging these thoughts helps reduce anxiety. I felt more in control of my emotions.",
+    },
+    {
+      id: 3,
+      image:require("../../Assets/Images/reports.png"),
+      title: "Anxiety Management Plan",
+      keywords: ["stress reduction", "coping", "anxiety"],
+      type: "report",
+      content: "Case: Patient experiences generalized anxiety disorder. Prescriptions: Alprazolam 0.5mg as needed. Past Diagnoses: Social anxiety disorder. Plan includes mindfulness exercises and regular therapy sessions.",
+    },
+    {
+      id: 4,
+      image:require("../../Assets/Images/tasks.png"),
+      title: "PTSD Coping Strategies",
+      keywords: ["trauma", "flashbacks", "grounding"],
+      type: "task",
+      content: "Reflections: The grounding techniques helped during flashbacks. Visualizing a safe space calmed me down. Controlled breathing exercises were effective in managing sudden anxiety spikes.",
+    },
+    {
+      id: 5,
+      image:require("../../Assets/Images/reports.png"),
+      title: "Bipolar Disorder Case Study",
+      keywords: ["mood swings", "manic episodes", "bipolar"],
+      type: "report",
+      content: "Case: Bipolar I disorder with frequent manic episodes. Prescriptions: Lithium 300mg twice daily. Past Diagnoses: Cyclothymic disorder. Emphasis on regular mood charting and therapy sessions.",
+    },
+    {
+      id: 6,
+      image:require("../../Assets/Images/tasks.png"),
+      title: "Mindfulness Exercises",
+      keywords: ["meditation", "awareness", "mindfulness"],
+      type: "task",
+      content: "Experience: Daily meditation helped increase my awareness and reduced stress. Mindful breathing exercises were calming and helped me stay present. Overall, I felt more grounded and less anxious.",
+    },
+    {
+      id: 7,
+      image:require("../../Assets/Images/reports.png"),
+      title: "Schizophrenia Treatment Summary",
+      keywords: ["antipsychotic", "therapy", "schizophrenia"],
+      type: "report",
+      content: "Case: Schizophrenia, paranoid type. Prescriptions: Risperidone 2mg daily. Past Diagnoses: Brief psychotic disorder. Ongoing treatment includes antipsychotic medication and cognitive-behavioral therapy.",
+    },
+    {
+      id: 8,
+      image:require("../../Assets/Images/tasks.png"),
+      title: "Self-care Routine Checklist",
+      keywords: ["daily routine", "mental wellness", "self-care"],
+      type: "task",
+      content: "Reflections: Implementing a daily routine improved my mental wellness. Regular exercise and healthy eating boosted my mood. Adequate sleep and leisure activities helped maintain a balance.",
+    },
+    {
+      id: 9,
+      image:require("../../Assets/Images/reports.png"),
+      title: "ADHD Therapy Progress Report",
+      keywords: ["attention deficit", "behavioral progress", "ADHD"],
+      type: "report",
+      content: "Case: Attention-deficit/hyperactivity disorder. Prescriptions: Methylphenidate 10mg twice daily. Past Diagnoses: Learning disability. Significant progress in attention span and behavioral regulation noted.",
+    },
+    {
+      id: 10,
+      image:require("../../Assets/Images/tasks.png"),
+      title: "Emotional Regulation Skills",
+      keywords: ["emotion control", "self-regulation", "coping"],
+      type: "task",
+      content: "Learning: I practiced deep breathing and positive self-talk during stressful moments. These skills helped me control my emotions better. I felt more equipped to handle difficult situations.",
+    },
+    
+  ];
+  
+  export default ScannedItemsData;
+  

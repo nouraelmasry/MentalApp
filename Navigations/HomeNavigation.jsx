@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomePage from '../Screens/HomeScreen/HomePage';
 import QuizzesList from '../Screens/Quizzes/QuizzesList';
 import QuizDetails from '../Screens/Quizzes/QuizDetails';
-
+import OcrNavigation from './OcrNavigation';
 const Stack = createStackNavigator();
 
 const HomeNavigation = () => {
@@ -13,6 +13,7 @@ const HomeNavigation = () => {
         <Stack.Screen name='Home' component={HomePage}/>
         <Stack.Screen name='Quizzes' component={QuizzesList}/>
         <Stack.Screen name='QuizDetails' component={QuizDetails}/>
+        <Stack.Screen name='OCR' component={OcrNavigation}/>
     </Stack.Navigator>
   );
 }
