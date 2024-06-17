@@ -5,6 +5,10 @@ import { Ionicons } from '@expo/vector-icons';
 import { ScrollView } from 'react-native';
 import { Modal } from 'react-native';
 import BookingModal from './BookingModal';
+import MapView, { Marker, Polyline } from 'react-native-maps';
+import * as Location from 'expo-location';
+import MapModal from './MapModal';
+
 
 const DoctorDetails = () => {
   const param= useRoute().params;
@@ -14,6 +18,15 @@ const DoctorDetails = () => {
   const navigation = useNavigation();
   const [isReadMore, setIsReadMore] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showMapModal, setShowMapModal] = useState(false);
+  const [userLocation, setUserLocation] = useState(null);
+  const [clinicLocation, setClinicLocation] = useState(null);
+
+  const toggleModal = () => {
+    setMapModalVisibile(!isMapModalVisibile);
+  };
+
+ 
   return (
     <View>
     <ScrollView style={{marginTop:30, height:'88%'}}>
@@ -26,7 +39,13 @@ const DoctorDetails = () => {
         <View style={styles.subContainer}>
           <Text style={{color:'white', backgroundColor:'#9bb169', padding:2, borderRadius:5, fontSize:14}}>{param.doctor.specialization}</Text>
         </View>
+
+
+        <TouchableOpacity onPress={()=>setShowMapModal(true)}>
         <Text style={{fontSize:16, fontFamily:'outfit', color:'gray'}}><Ionicons name="location-sharp" size={18} color="#9bb169"  />{param.doctor.address}</Text>
+        </TouchableOpacity>
+        
+        
         <View style={{borderWidth:0.4, color:'gray', marginTop:20, marginBottom:20}}></View>
         <View>
           <Text style={{fontSize:17, fontFamily:'outfit-bold', marginBottom:10}}>About me</Text>
@@ -48,6 +67,45 @@ const DoctorDetails = () => {
     <Modal animationType='slide' visible={showModal}>
       <BookingModal hideModal={()=>setShowModal(false)}/>
     </Modal>
+
+    <Modal animationType='slide' visible={showMapModal}>
+      <MapModal hideModal={()=>setShowMapModal(false)} clinicLocation={{
+          latitude: param.doctor.location.latitude,
+          longitude: param.doctor.location.longitude
+        }} />
+    </Modal>
+
+    {/* <Modal isVisible={isMapModalVisibile} onBackdropPress={()=>toggleModal} style={styles.fullScreenModal}>
+        <View style={styles.fullScreenModalContent}>
+          <TouchableOpacity style={styles.closeButton} onPress={()=>toggleModal}>
+            <Ionicons name="close" size={24} color="black" />
+          </TouchableOpacity>
+          <MapView
+            style={styles.map}
+            initialRegion={{
+              latitude: userLocation?.latitude || 37.78825,
+              longitude: userLocation?.longitude || -122.4324,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+            showsUserLocation={true}
+          >
+            {clinicLocation && (
+              <Marker
+                coordinate={clinicLocation}
+                title="Clinic Location"
+              />
+            )}
+            {userLocation && clinicLocation && (
+              <Polyline
+                coordinates={[userLocation, clinicLocation]}
+                strokeColor="#9bb169"
+                strokeWidth={6}
+              />
+            )}
+          </MapView>
+        </View>
+      </Modal> */}
     </View>
   )
 }
