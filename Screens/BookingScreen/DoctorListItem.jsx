@@ -8,7 +8,7 @@ const DoctorListItem = ({doctor}) => {
     const navigation = useNavigation();
   return (
     <TouchableOpacity style={styles.container} onPress={()=>navigation.push('DoctorDetails',{doctor:doctor})}>
-      <Image source={doctor.image} style={styles.image}/>
+      <Image source={{ uri: doctor.image }} style={styles.image}/>
       <View style={styles.subContainer}>
         <Text style={{fontFamily:'outfit', color:'grey', fontSize:14}}>{doctor.specialization}</Text>
         <Text style={{fontFamily:'outfit-bold', fontSize:19}}>{doctor.name}</Text>

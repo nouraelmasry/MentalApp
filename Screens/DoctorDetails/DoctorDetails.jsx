@@ -33,7 +33,7 @@ const DoctorDetails = () => {
       <TouchableOpacity style={styles.backBtnContainer} onPress={()=>navigation.goBack()}>
         <Ionicons name='arrow-back-outline' size={30} color='black'/>
       </TouchableOpacity>
-      <Image source={param?.doctor.image} style={{width:'100%', height:300}}/>
+      <Image source={{ uri: param?.doctor.image }} style={{width:'100%', height:300}}/>
       <View style={styles.infoContainer}>
         <Text style={{fontFamily:'outfit-bold', fontSize:25}}>{param.doctor.name}</Text>
         <View style={styles.subContainer}>

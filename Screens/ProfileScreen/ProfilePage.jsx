@@ -6,7 +6,7 @@ const ProfilePage = () => {
     const [doctors, setDoctors] = useState([]);
 
     useEffect(() => {
-        axios.get("http://192.168.1.13:3000/doctors")
+        axios.get("http://192.168.1.15:3000/doctors")
             .then(response => {
                 setDoctors(response.data);
                 console.log(response.data, "h");

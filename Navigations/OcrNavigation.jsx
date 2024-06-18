@@ -24,7 +24,7 @@ const OcrNavigation = () => {
   const [imageUri, setImageUri] = useState(null);
   const [ocrText, setOcrText] = useState('');
 
-  const ocrSpaceApiKey = '8d6aca4f3588957'; // Replace with your OCR.space API key
+  const ocrSpaceApiKey = 'K82186239088957'; // Replace with your OCR.space API key
 
 
   const closeImagePreviewModal = () => {

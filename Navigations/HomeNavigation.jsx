@@ -6,7 +6,6 @@ import QuizzesList from '../Screens/Quizzes/QuizzesList';
 import QuizDetails from '../Screens/Quizzes/QuizDetails';
 import OcrNavigation from './OcrNavigation';
 import NextSessionDetails from '../Screens/NextSession/NextSessionDetails';
-import Meeting from '../Screens/NextSession/Meeting';
 const Stack = createStackNavigator();
 
 const HomeNavigation = () => {
@@ -17,7 +16,6 @@ const HomeNavigation = () => {
         <Stack.Screen name='QuizDetails' component={QuizDetails}/>
         <Stack.Screen name='OCR' component={OcrNavigation}/>
         <Stack.Screen name="NextSession" component={NextSessionDetails}/>
-        <Stack.Screen name="Meeting" component={Meeting}/>
     </Stack.Navigator>
   );
 }
