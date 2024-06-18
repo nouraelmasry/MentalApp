@@ -15,6 +15,38 @@ mongoose.connect("mongodb+srv://nour:nour@cluster0.dd4wfw5.mongodb.net/").then((
 }).catch((e) => {
     console.log('error connecting to mongo', e);
 });
+const userSchema = new mongoose.Schema({
+    phoneNumber: String,
+    gender: String,
+});
+
+const User = mongoose.model('User', userSchema);
+
+app.get('/userdata', async (req, res) => {
+    try {
+        const user = await User.findOne();
+        res.json(user);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
+app.post('/userdata', async (req, res) => {
+    try {
+        const { phoneNumber, gender } = req.body;
+        let user = await User.findOne();
+        if (user) {
+            user.phoneNumber = phoneNumber;
+            user.gender = gender;
+        } else {
+            user = new User({ phoneNumber, gender });
+        }
+        await user.save();
+        res.status(200).send('User data saved successfully.');
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
 
 
 
