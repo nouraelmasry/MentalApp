@@ -9,6 +9,8 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@azure/msal-browser": "^3.17.0",
+    "@azure/msal-react": "^2.0.19",
     "@clerk/clerk-expo": "^1.1.4",
     "@expo/vector-icons": "^14.0.2",
     "@google/generative-ai": "^0.13.0",
@@ -55,6 +57,7 @@
     "react-native-tab-view": "^3.5.2",
     "react-native-tesseract-ocr": "^2.0.3",
     "react-native-vector-icons": "^10.1.0",
+    "react-native-webview": "13.8.6",
     "tesseract.js": "^5.1.0"
   },
   "resolutions": {
