@@ -15,42 +15,9 @@ mongoose.connect("mongodb+srv://nour:nour@cluster0.dd4wfw5.mongodb.net/").then((
 }).catch((err) => {
     console.error("Error connecting to MongoDB:", err);
 });
-const userSchema = new mongoose.Schema({
-    phoneNumber: String,
-    gender: String,
-});
 
-const User = mongoose.model('User', userSchema);
-
-app.get('/userdata', async (req, res) => {
-    try {
-        const user = await User.findOne();
-        res.json(user);
-    } catch (error) {
-        res.status(500).send(error);
-    }
-});
-
-app.post('/userdata', async (req, res) => {
-    try {
-        const { phoneNumber, gender } = req.body;
-        let user = await User.findOne();
-        if (user) {
-            user.phoneNumber = phoneNumber;
-            user.gender = gender;
-        } else {
-            user = new User({ phoneNumber, gender });
-        }
-        await user.save();
-        res.status(200).send('User data saved successfully.');
-    } catch (error) {
-        res.status(500).send(error);
-    }
-});
-
+const User = require("./models/User"); // Importing the user model
 const Doctor = require("./models/Doctors");
-const Appointment = require("./models/Appointments");
-
 
 // POST endpoint to add a new doctor
 app.post('/doctors', async (req, res) => {
@@ -90,37 +57,84 @@ app.get('/doctors', async (req, res) => {
     }
 });
 
-//Appointments
-// app.post('/appointments', async (req, res) => {
-//     const { id, date, timeSlot, notes, patientID, doctorID } = req.body;
-
-//     const newAppointment = new Appointment({
-//         id,
-//         date,
-//         timeSlot,
-//         notes,
-//         patientID,
-//         doctorID
-//     });
-
+// // POST endpoint to add a new user
+// app.post('/users', async (req, res) => {
 //     try {
-//         const savedAppointment = await newAppointment.save();
-//         res.status(201).json(savedAppointment);
-//     } catch (err) {
-//         res.status(500).json({ error: err.message });
+//         const { id, name, email, image } = req.body;
+
+//         // Create a new instance of User model
+//         const newUser = new User({
+//             id,
+//             name,
+//             email,
+//             image
+//         });
+
+//         // Save the new user to MongoDB
+//         const savedUser = await newUser.save();
+
+//         res.status(201).json(savedUser); // Respond with the saved user document
+//     } catch (error) {
+//         console.error("Error saving user:", error);
+//         res.status(500).json({ error: "Error saving user" });
 //     }
 // });
 
-// // Endpoint to get all appointments
-// app.get('/appointments', async (req, res) => {
+// // GET endpoint to fetch all users
+// app.get('/users', async (req, res) => {
 //     try {
-//         const appointments = await Appointment.find({}).populate('doctorID').populate('patientID');
-//         res.json(appointments);
-//     } catch (err) {
-//         res.status(500).send(err);
+//         const users = await User.find({});
+//         res.json(users);
+//     } catch (error) {
+//         res.status(500).json({ error: "Error fetching users" });
 //     }
 // });
 
+// app.listen(port, () => {
+//     console.log(`Server is running on http://localhost:${port}`);
+// });
+
+
+
+// POST endpoint to add a new user
+app.post('/users', async (req, res) => {
+    try {
+        const {  name, email, image } = req.body;
+
+        // Check if user already exists
+        let user = await User.findOne({ email });
+
+        if (!user) {
+            // Create a new instance of User model
+            user = new User({
+                
+                name,
+                email,
+                image
+            });
+
+            // Save the new user to MongoDB
+            const savedUser = await user.save();
+
+            res.status(201).json(savedUser); // Respond with the saved user document
+        } else {
+            res.status(200).json(user); // User already exists, respond with the existing user document
+        }
+    } catch (error) {
+        console.error("Error saving user:", error);
+        res.status(500).json({ error: "Error saving user" });
+    }
+});
+
+// GET endpoint to fetch all users
+app.get('/users', async (req, res) => {
+    try {
+        const users = await User.find({});
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ error: "Error fetching users" });
+    }
+});
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

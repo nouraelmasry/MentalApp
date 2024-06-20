@@ -14,7 +14,7 @@ const BottomSlider = () => {
     const Data = [
         {
             id: "01",
-            image: require("../../Assets/Images/Slider2.jpeg"),
+            image: require("../../Assets/Images/nextSessionimg.png"),
             screenName: "NextSession",
 
 

@@ -122,106 +122,152 @@ const QuizzesData = [
         image: require("../../Assets/Images/Depression-rafiki.png"),
         title: "Depression Quiz",
         questions: [
-            {
-                question: "How often do you feel down, depressed, or hopeless?",
-                options: [
-                    { text: "Never", score: 0 },
-                    { text: "Rarely", score: 1 },
-                    { text: "Sometimes", score: 2 },
-                    { text: "Often", score: 3 },
-                    { text: "Always", score: 4 }
-                ]
-            },
-            {
-                question: "How is your interest in doing things you used to enjoy?",
-                options: [
-                    { text: "I enjoy them as much as ever", score: 0 },
-                    { text: "I enjoy them somewhat less", score: 1 },
-                    { text: "I enjoy them much less", score: 2 },
-                    { text: "I hardly enjoy them at all", score: 3 },
-                    { text: "I don’t enjoy them at all", score: 4 }
-                ]
-            },
-            {
-                question: "How often do you have trouble sleeping or staying asleep?",
-                options: [
-                    { text: "Never", score: 0 },
-                    { text: "Rarely", score: 1 },
-                    { text: "Sometimes", score: 2 },
-                    { text: "Often", score: 3 },
-                    { text: "Always", score: 4 }
-                ]
-            },
-            {
-                question: "How often do you feel tired or have little energy?",
-                options: [
-                    { text: "Never", score: 0 },
-                    { text: "Rarely", score: 1 },
-                    { text: "Sometimes", score: 2 },
-                    { text: "Often", score: 3 },
-                    { text: "Always", score: 4 }
-                ]
-            },
-            {
-                question: "How often do you feel bad about yourself or that you are a failure?",
-                options: [
-                    { text: "Never", score: 0 },
-                    { text: "Rarely", score: 1 },
-                    { text: "Sometimes", score: 2 },
-                    { text: "Often", score: 3 },
-                    { text: "Always", score: 4 }
-                ]
-            },
-            {
-                question: "How often do you have trouble concentrating on things?",
-                options: [
-                    { text: "Never", score: 0 },
-                    { text: "Rarely", score: 1 },
-                    { text: "Sometimes", score: 2 },
-                    { text: "Often", score: 3 },
-                    { text: "Always", score: 4 }
-                ]
-            },
-            {
-                question: "How often do you move or speak so slowly that other people could have noticed?",
-                options: [
-                    { text: "Never", score: 0 },
-                    { text: "Rarely", score: 1 },
-                    { text: "Sometimes", score: 2 },
-                    { text: "Often", score: 3 },
-                    { text: "Always", score: 4 }
-                ]
-            },
-            {
-                question: "How often do you feel restless or fidgety?",
-                options: [
-                    { text: "Never", score: 0 },
-                    { text: "Rarely", score: 1 },
-                    { text: "Sometimes", score: 2 },
-                    { text: "Often", score: 3 },
-                    { text: "Always", score: 4 }
-                ]
-            },
-            {
-                question: "How often do you think about death or suicide?",
-                options: [
-                    { text: "Never", score: 0 },
-                    { text: "Rarely", score: 1 },
-                    { text: "Sometimes", score: 2 },
-                    { text: "Often", score: 3 },
-                    { text: "Always", score: 4 }
-                ]
-            }
-        ],
+          {
+            question: "How often do you have sleep disturbances?",
+            options: [
+              { text: "Never", score: 1 },
+              { text: "Always", score: 2 },
+              { text: "Often", score: 3 },
+              { text: "Rarely", score: 4 },
+              { text: "Sometimes", score: 5 },
+              { text: "Not at all", score: 6 }
+            ]
+          },
+          {
+            question: "How is your appetite affected?",
+            options: [
+              { text: "Never", score: 1 },
+              { text: "Always", score: 2 },
+              { text: "Often", score: 3 },
+              { text: "Rarely", score: 4 },
+              { text: "Sometimes", score: 5 },
+              { text: "Not at all", score: 6 }
+            ]
+          },
+          {
+            question: "How is your interest in activities you used to enjoy?",
+            options: [
+              { text: "I enjoy them as much as ever", score: 1 },
+              { text: "I enjoy them much less", score: 2 },
+              { text: "I enjoy them somewhat less", score: 3 },
+              { text: "I hardly enjoy them at all", score: 4 },
+              { text: "I don’t enjoy them at all", score: 5 }
+            ]
+          },
+          {
+            question: "How often do you experience feelings of fatigue or low energy?",
+            options: [
+              { text: "Never", score: 1 },
+              { text: "Always", score: 2 },
+              { text: "Often", score: 3 },
+              { text: "Rarely", score: 4 },
+              { text: "Sometimes", score: 5 },
+              { text: "Not at all", score: 6 }
+            ]
+          },
+          {
+            question: "How often do you feel worthless or excessive guilt?",
+            options: [
+              { text: "Never", score: 1 },
+              { text: "Always", score: 2 },
+              { text: "Often", score: 3 },
+              { text: "Rarely", score: 4 },
+              { text: "Sometimes", score: 5 },
+              { text: "Not at all", score: 6 }
+            ]
+          },
+          {
+            question: "How often do you have difficulty concentrating?",
+            options: [
+              { text: "Never", score: 1 },
+              { text: "Always", score: 2 },
+              { text: "Often", score: 3 },
+              { text: "Rarely", score: 4 },
+              { text: "Sometimes", score: 5 },
+              { text: "Not at all", score: 6 }
+            ]
+          },
+          {
+            question: "How often do you experience physical agitation?",
+            options: [
+              { text: "Never", score: 1 },
+              { text: "Always", score: 2 },
+              { text: "Often", score: 3 },
+              { text: "Rarely", score: 4 },
+              { text: "Sometimes", score: 5 },
+              { text: "Not at all", score: 6 }
+            ]
+          },
+          {
+            question: "How often do you have thoughts of self-harm or suicide?",
+            options: [
+              { text: "Never", score: 1 },
+              { text: "Always", score: 2 },
+              { text: "Often", score: 3 },
+              { text: "Rarely", score: 4 },
+              { text: "Sometimes", score: 5 },
+              { text: "Not at all", score: 6 }
+            ]
+          },
+          {
+            question: "How often do you have issues with sleeping?",
+            options: [
+              { text: "Never", score: 1 },
+              { text: "Always", score: 2 },
+              { text: "Often", score: 3 },
+              { text: "Rarely", score: 4 },
+              { text: "Sometimes", score: 5 },
+              { text: "Not at all", score: 6 }
+            ]
+          },
+          {
+            question: "How often do you experience feelings of aggression?",
+            options: [
+              { text: "Never", score: 1 },
+              { text: "Always", score: 2 },
+              { text: "Often", score: 3 },
+              { text: "Rarely", score: 4 },
+              { text: "Sometimes", score: 5 },
+              { text: "Not at all", score: 6 }
+            ]
+          },
+          {
+            question: "How often do you feel hopeless?",
+            options: [
+              { text: "Never", score: 1 },
+              { text: "Always", score: 2 },
+              { text: "Often", score: 3 },
+              { text: "Rarely", score: 4 },
+              { text: "Sometimes", score: 5 },
+              { text: "Not at all", score: 6 }
+            ]
+          },
+          {
+            question: "How often do you feel restless?",
+            options: [
+              { text: "Never", score: 1 },
+              { text: "Always", score: 2 },
+              { text: "Often", score: 3 },
+              { text: "Rarely", score: 4 },
+              { text: "Sometimes", score: 5 },
+              { text: "Not at all", score: 6 }
+            ]
+          },
+          {
+            question: "How often do you experience lack of energy?",
+            options: [
+              { text: "Never", score: 1 },
+              { text: "Always", score: 2 },
+              { text: "Often", score: 3 },
+              { text: "Rarely", score: 4 },
+              { text: "Sometimes", score: 5 },
+              { text: "Not at all", score: 6 }
+            ]
+          }
+        ]
+      }
+      ,
     
-        // Scoring System Interpretation
-        // 0-5 points: Minimal depression
-        // 6-10 points: Mild depression
-        // 11-15 points: Moderate depression
-        // 16-20 points: Moderately severe depression
-        // 21-36 points: Severe depression
-    
-    },
         {
             id: 3,
             color: COLORS.Yellow,
